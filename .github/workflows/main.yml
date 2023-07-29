@@ -101,9 +101,7 @@ jobs:
         with:
           context: ./frontend/
           push: true
-          tags: username/taski_frontend:latest 
-В этих задачах копируется код, устанавливаются зависимости, запускаются тесты, собирается и пушится образ. Ничего принципиально нового, разница лишь в деталях.
-Осталось добавить workflow для Nginx. В нём нужно лишь собрать образ с конфигом и отправить его на Docker Hub. Добавьте этот код в конец перечня задач.
+          tags: soterone/taski_frontend:latest
   build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
     runs-on: ubuntu-latest
@@ -123,4 +121,5 @@ jobs:
           context: ./gateway/
           push: true
           # Тут вместо username должен быть ваш логин на Docker Hub
-          tags: username/taski_gateway:latest
+          tags: soterone/taski_gateway:latest
+  
